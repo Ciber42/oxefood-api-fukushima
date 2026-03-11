@@ -1,6 +1,7 @@
 package br.com.ifpe.oxefood.api.produto;
 
 import br.com.ifpe.oxefood.modelo.produto.Produto;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,8 @@ public class ProdutoRequest {
     private Long idCategoria; 
     
     private String codigo;
+
+    @NotBlank(message = "O Nome é de preenchimento obrigatório")
 
     private String titulo;
 
