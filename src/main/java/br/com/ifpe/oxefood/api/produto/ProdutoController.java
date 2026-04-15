@@ -31,15 +31,15 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody ProdutoRequest  request) {
+    public ResponseEntity<Produto> save(@RequestBody  ProdutoRequest  request) {
         Produto produtoNovo = produtoService.save(request.build());
 
         Produto produto = produtoService.save(produtoNovo);
         
         return new ResponseEntity<Produto>(produto, HttpStatus.CREATED);
     }
-       @GetMapping
-          public List<Produto> listarTodos() {
+    @GetMapping
+        public List<Produto> listarTodos() {
         return produtoService.listarTodos();
     }
 
